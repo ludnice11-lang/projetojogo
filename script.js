@@ -34,6 +34,15 @@ let tempoRestante = 0;
 // Guarda o cronômetro, para podermos parar ele depois
 let cronometro;
 
+// Guarda a espera entre uma pergunta e outra, para podermos cancelar
+let esperaProximo;
+
+// Diz se a partida está acontecendo
+let jogando = false;
+
+// Diz se o jogo está pausado
+let emPausa = false;
+
 // Mostra na tela o animal atual
 function mostrarPergunta() {
     // Pega o animal que está nessa posição da lista
@@ -96,8 +105,7 @@ function contarTempo() {
         document.getElementById("mensagem").textContent = "O tempo acabou! Era a letra " + animais[indice].letra + " de " + animais[indice].nome;
 
         // Espera 3 segundos e segue para o próximo
-        setTimeout(proximaPergunta, 2000);
-    }
+        esperaProximo = setTimeout(proximaPergunta, 2000);    }
 }
 
 // Confere a letra escolhida
@@ -126,8 +134,7 @@ function verificar(letra) {
 
     // Atualiza o placar e espera 3 segundos para seguir
     atualizarPlacar();
-    setTimeout(proximaPergunta, 2000);
-}
+    esperaProximo = setTimeout(proximaPergunta, 2000);}
 
 // Passa para o próximo animal ou termina o jogo
 function proximaPergunta() {
@@ -144,6 +151,9 @@ function proximaPergunta() {
 
 // Mostra a tela final
 function terminarJogo() {
+    if (podeResponder === false || emPausa === true) {    jogando = false;
+    document.getElementById("botao-pausar").hidden = true;
+
     // Limpa o cronômetro da tela
     document.getElementById("tempo").textContent = "";
 
@@ -187,7 +197,87 @@ function recomecar() {
     pontos = 0;
     erros = 0;
     atualizarPlacar();
+    iniciarJogo();
+}
+// Mostra a tela inicial e espera o comando para começar
+function telaInicial() {
+    // Para o cronômetro e a espera entre as perguntas
+    clearInterval(cronometro);
+    clearTimeout(esperaProximo);
+
+    // Zera tudo
+    jogando = false;
+    emPausa = false;
+    indice = 0;
+    pontos = 0;
+    erros = 0;
+    atualizarPlacar();
+
+    // Limpa os textos e esconde o botão de pausar
+    document.getElementById("tempo").textContent = "";
+    document.getElementById("mensagem").textContent = "";
+    document.getElementById("caixa-nome").textContent = "";
+    document.getElementById("ranking").textContent = "";
+    document.getElementById("botao-pausar").hidden = true;
+
+    // Mostra o convite para jogar
+    document.getElementById("animal").textContent = "🔤";
+    document.getElementById("pergunta").textContent = "Vamos jogar? Clique em Iniciar!";
+
+    // Cria o botão de iniciar
+    let caixa = document.getElementById("opcoes");
+    caixa.textContent = "";
+    let botao = document.createElement("button");
+    botao.textContent = "Iniciar";
+    botao.className = "botao-recomecar";
+    botao.onclick = iniciarJogo;
+    caixa.appendChild(botao);
+}
+
+// Começa a partida
+function iniciarJogo() {
+    jogando = true;
+
+    // Mostra o botão de pausar
+    let botao = document.getElementById("botao-pausar");
+    botao.textContent = "Pausar";
+    botao.hidden = false;
+
     mostrarPergunta();
+}
+
+// Pausa o jogo ou continua de onde parou
+function alternarPausa() {
+    let botao = document.getElementById("botao-pausar");
+
+    if (emPausa === false) {
+        // Pausa: para o cronômetro e a espera entre as perguntas
+        emPausa = true;
+        clearInterval(cronometro);
+        clearTimeout(esperaProximo);
+        document.getElementById("tempo").textContent = "Jogo pausado";
+        botao.textContent = "Continuar";
+    } else {
+        // Continua: mostra o tempo que tinha ficado guardado
+        emPausa = false;
+        document.getElementById("tempo").textContent = "Tempo: " + tempoRestante;
+        botao.textContent = "Pausar";
+
+        // Se a pergunta estava aberta, volta a contar o tempo.
+        // Se a criança já tinha respondido, segue para o próximo animal.
+        if (podeResponder === true) {
+            cronometro = setInterval(contarTempo, 1000);
+        } else {
+            esperaProximo = setTimeout(proximaPergunta, 2000);
+        }
+    }
+}
+
+// Se a pessoa sair durante a partida, volta para o início
+function sairDaJanela() {
+    if (jogando === true) {
+        telaInicial();
+    }
 }
 
 // Escreve os pontos e os erros na tela
@@ -195,8 +285,11 @@ function atualizarPlacar() {
     document.getElementById("pontos").textContent = "Pontos: " + pontos + " | Erros: " + erros;
 }
 
-// Mostra o primeiro animal quando a página abre
-mostrarPergunta();
+// Liga o botão de pausar à sua função
+document.getElementById("botao-pausar").onclick = alternarPausa;
+
+// Mostra a tela inicial quando a página abre
+telaInicial();
 
 // Todas as letras do alfabeto
 let alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -389,3 +482,6 @@ function zerarRanking() {
         document.getElementById("ranking").textContent = "";
     }
 }
+
+// Quando a pessoa sai da janela, o jogo volta para o início
+window.addEventListener("blur", sairDaJanela);
