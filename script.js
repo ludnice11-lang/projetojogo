@@ -205,7 +205,7 @@ let alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let cores = ["#e74c3c", "#f39c12", "#2ecc71", "#3498db", "#9b59b6", "#ec407a"];
 
 // Tamanho de cada bolinha, igual ao do CSS
-let tamanho = 44;
+let tamanho = 30;
 
 // Cria uma bolinha em um ponto da tela
 function criarBolinha(x, y, numero) {
