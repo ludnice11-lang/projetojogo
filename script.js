@@ -105,14 +105,13 @@ function contarTempo() {
         document.getElementById("mensagem").textContent = "O tempo acabou! Era a letra " + animais[indice].letra + " de " + animais[indice].nome;
 
         // Espera 3 segundos e segue para o próximo
-        esperaProximo = setTimeout(proximaPergunta, 2000);    }
-}
+        esperaProximo = setTimeout(proximaPergunta, 2000);
+    }}
 
 // Confere a letra escolhida
 function verificar(letra) {
     // Se ainda não pode responder, para aqui
-    if (podeResponder === false) {
-        return;
+    if (podeResponder === false || emPausa === true) {        return;
     }
 
     // A criança só tem uma chance: bloqueia cliques e para o tempo
@@ -134,8 +133,8 @@ function verificar(letra) {
 
     // Atualiza o placar e espera 3 segundos para seguir
     atualizarPlacar();
-    esperaProximo = setTimeout(proximaPergunta, 2000);}
-
+    esperaProximo = setTimeout(proximaPergunta, 2000);
+}
 // Passa para o próximo animal ou termina o jogo
 function proximaPergunta() {
     // Avança uma posição na lista
@@ -151,8 +150,8 @@ function proximaPergunta() {
 
 // Mostra a tela final
 function terminarJogo() {
-    if (podeResponder === false || emPausa === true) {    jogando = false;
-    document.getElementById("botao-pausar").hidden = true;
+    // A partida acabou: esconde o botão de pausar
+    jogando = false;    document.getElementById("botao-pausar").hidden = true;
 
     // Limpa o cronômetro da tela
     document.getElementById("tempo").textContent = "";
