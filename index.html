@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Permite usar acentos e emojis -->
+    <meta charset="UTF-8">
+    <!-- Ajusta a página para celulares e tablets -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título que aparece na aba do navegador -->
+    <title>Jogo das Letras</title>
+    <!-- Liga a página ao arquivo de estilo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Jogo das Letras</h1>
+
+        <!-- Mostra quantos pontos e erros a criança fez -->
+        <p id="pontos">Pontos: 0 | Erros: 0</p>
+
+        <!-- Mostra quantos segundos faltam -->
+        <p id="tempo"></p>
+
+        <!-- Mostra o desenho do animal -->
+        <div id="animal">🐒</div>
+
+        <!-- Mostra a pergunta -->
+        <p id="pergunta">Com que letra começa o nome deste animal?</p>
+
+        <!-- Guarda os botões com as letras -->
+        <div id="opcoes"></div>
+
+        <!-- Vai mostrar se a criança acertou -->
+        <p id="mensagem"></p>
+
+        <!-- Caixinha para escrever o nome -->
+        <div id="caixa-nome"></div>
+
+        <!-- Lista dos melhores resultados -->
+        <div id="ranking"></div>
+    </main>
+
+    <!-- Fica no final para o JavaScript rodar depois de a página existir -->
+    <script src="script.js"></script>
+</body>
+
+</html>

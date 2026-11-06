@@ -1,0 +1,118 @@
+/* Página inteira */
+body {
+    /* Deixa um espaço no fim da página, longe das bolinhas de baixo */
+    padding-bottom: 20px;
+    /* Cor de fundo: amarelo clarinho */
+    background-color: rgb(152, 192, 204);
+    /* Letra arredondada e fácil de ler */
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    /* Centraliza os textos */
+    text-align: center;
+    /* Tira a margem que o navegador coloca sozinho */
+    margin: 0;
+}
+
+/* Cartão branco onde fica o jogo */
+/* Cartão branco onde fica o jogo */
+main {
+    background-color: white;
+    /* Inclui o espaço interno na largura */
+    box-sizing: border-box;
+    /* Deixa espaço para as bolinhas nas laterais */
+    width: calc(100% - 120px);
+    /* Largura máxima, para não ficar largo demais */
+    max-width: 500px;
+    /* Dá distância das bolinhas e centraliza o cartão */
+    margin: 70px auto;
+    /* Espaço interno do cartão */
+    padding: 20px;
+    /* Arredonda os cantos */
+    border-radius: 20px;
+}
+/* Desenho do animal */
+#animal {
+    /* Deixa o emoji bem grande */
+    font-size: 120px;
+}
+
+/* Pergunta */
+#pergunta {
+    font-size: 26px;
+}
+
+/* Botões das letras */
+button {
+    /* Letra grande */
+    font-size: 40px;
+    /* Botão grande, fácil para dedos pequenos */
+    width: 90px;
+    height: 90px;
+    /* Espaço entre os botões */
+    margin: 8px;
+    /* Cor de fundo e cor da letra */
+    background-color: #4caf50;
+    color: white;
+    /* Tira a borda padrão */
+    border: none;
+    /* Deixa o botão arredondado */
+    border-radius: 20px;
+    /* Mostra a mãozinha ao passar o mouse */
+    cursor: pointer;
+}
+
+/* Muda a cor quando o mouse passa por cima do botão */
+button:hover {
+    background-color: #388e3c;
+}
+
+/* Mensagem de acerto ou erro */
+#mensagem {
+    font-size: 24px;
+    font-weight: bold;
+}
+/* Cronômetro */
+#tempo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d9534f;
+}
+/* Bolinhas da centopeia do alfabeto */
+/* Bolinhas da centopeia do alfabeto */
+.bolinha {
+    /* Prende a bolinha na tela */
+    position: fixed;
+    /* Tamanho da bolinha */
+    width: 44px;
+    height: 44px;
+    /* Transforma o quadrado em círculo */
+    border-radius: 50%;
+    /* Centraliza a letra dentro da bolinha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Aparência da letra */
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+/* Botão de jogar novamente */
+.botao-recomecar {
+    width: auto;
+    height: auto;
+    padding: 15px 30px;
+    font-size: 24px;
+}
+/* Campo para escrever o nome */
+#nome-jogador {
+    font-size: 20px;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 10px;
+    border: 2px solid #4caf50;
+}
+
+/* Lista do ranking */
+#ranking p {
+    font-size: 20px;
+    margin: 6px;
+}
