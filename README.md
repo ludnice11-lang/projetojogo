@@ -1,5 +1,7 @@
 # Jogo das Letras 🐛
 
+![Capa do Jogo das Letras: um macaquinho pendurado em um cipó na floresta, cercado de letras coloridas](imagens/image_22eef1cb.jpg)
+
 Jogo educativo para crianças que estão aprendendo as letras. A criança olha o desenho de um animal e escolhe com qual letra o nome dele começa.
 
 Criei este projeto unindo minha experiência como educadora ao que estou aprendendo em programação.
