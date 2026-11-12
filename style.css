@@ -2,8 +2,20 @@
 body {
     /* Deixa um espaço no fim da página, longe das bolinhas de baixo */
     padding-bottom: 20px;
-    /* Cor de fundo: azul clarinho */
+    /* Cor de fundo: azul clarinho (aparece enquanto a imagem carrega) */
     background-color: rgb(152, 192, 204);
+    /* Imagem de fundo com uma "película" branca por cima para clarear.
+       A primeira camada (linear-gradient) é o branco transparente;
+       a segunda (url) é a imagem da floresta, que fica por baixo. */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+        url("imagens/image_22eef1cb.jpg");
+    /* Faz a imagem cobrir a tela inteira, sem repetir */
+    background-size: cover;
+    /* Deixa o centro da imagem no meio da tela */
+    background-position: center;
+    /* A imagem fica parada quando a página rola */
+    background-attachment: fixed;
     /* Letra arredondada e fácil de ler */
     font-family: "Comic Sans MS", Arial, sans-serif;
     /* Centraliza os textos */
