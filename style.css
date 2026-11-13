@@ -1,53 +1,45 @@
-/* Página inteira */
+/* Pág inteira */
 body {
-    /* Deixa um espaço no fim da página, longe das bolinhas de baixo */
+    /* Espaço no fim, longe das bolinhas */
     padding-bottom: 20px;
-    /* Cor de fundo: azul clarinho (aparece enquanto a imagem carrega) */
+    /* Azul clarinho enquanto a imagem carrega */
     background-color: rgb(152, 192, 204);
-    /* Imagem de fundo com uma "película" branca por cima para clarear.
-       A primeira camada (linear-gradient) é o branco transparente;
-       a segunda (url) é a imagem da floresta, que fica por baixo. */
+    /* Imagem da floresta c/ um branco transparente por cima p/ clarear */
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
         url("imagens/image_22eef1cb.jpg");
-    /* Faz a imagem cobrir a tela inteira, sem repetir */
+    /* Cobre a tela td, sem repetir */
     background-size: cover;
-    /* Deixa o centro da imagem no meio da tela */
     background-position: center;
-    /* A imagem fica parada quando a página rola */
+    /* Imagem parada qdo rola a pág */
     background-attachment: fixed;
-    /* Letra arredondada e fácil de ler */
+    /* Letra arredondada */
     font-family: "Comic Sans MS", Arial, sans-serif;
-    /* Centraliza os textos */
     text-align: center;
-    /* Tira a margem que o navegador coloca sozinho */
+    /* Tira a margem do navegador */
     margin: 0;
 }
 
-/* Cartão branco onde fica o jogo */
+/* Cartão branco do jogo */
 main {
     background-color: white;
-    /* Inclui o espaço interno na largura */
     box-sizing: border-box;
-    /* Deixa espaço para as bolinhas nas laterais */
+    /* Espaço p/ as bolinhas dos lados */
     width: calc(100% - 80px);
-    /* Largura máxima do cartão */
     max-width: 420px;
-    /* Distância das bolinhas e centralização do cartão */
+    /* Longe das bolinhas e centralizado */
     margin: 40px auto;
-    /* Espaço interno do cartão */
     padding: 12px 15px;
-    /* Arredonda os cantos */
     border-radius: 20px;
 }
 
-/* Título do jogo */
+/* Título */
 h1 {
     font-size: 26px;
     margin: 8px;
 }
 
-/* Parágrafos: menos espaço entre eles */
+/* Menos espaço entre os parágrafos */
 p {
     margin: 8px;
 }
@@ -55,7 +47,7 @@ p {
 /* Desenho do animal */
 #animal {
     font-size: 80px;
-    /* Altura da linha: tira o espaço sobrando em volta do emoji */
+    /* Tira o espaço sobrando em volta do emoji */
     line-height: 1.1;
 }
 
@@ -69,47 +61,43 @@ button {
     font-size: 30px;
     width: 65px;
     height: 65px;
-    /* Espaço entre os botões */
     margin: 6px;
-    /* Cor de fundo e cor da letra */
     background-color: #4caf50;
     color: white;
-    /* Tira a borda padrão */
     border: none;
-    /* Deixa o botão arredondado */
     border-radius: 16px;
-    /* Mostra a mãozinha ao passar o mouse */
+    /* Mãozinha no mouse */
     cursor: pointer;
 }
 
-/* Muda a cor quando o mouse passa por cima do botão */
+/* Cor qdo passa o mouse */
 button:hover {
     background-color: #388e3c;
 }
 
-/* Mensagem de acerto ou erro */
+/* Msg de acerto ou erro */
 #mensagem {
     font-size: 18px;
     font-weight: bold;
 }
 
-/* Cronômetro */
+/* Tempo */
 #tempo {
     font-size: 18px;
     font-weight: bold;
     color: #d9534f;
 }
 
-/* Botões de texto, como "Tentar de novo" */
+/* Botões de texto (Iniciar, Tentar de novo...) */
 .botao-recomecar {
-    /* Largura automática: acompanha o tamanho do texto */
+    /* Acompanha o tamanho do texto */
     width: auto;
     height: auto;
     padding: 10px 18px;
     font-size: 16px;
 }
 
-/* Campo onde a criança escreve o nome */
+/* Campo do nome */
 #nome-jogador {
     font-size: 16px;
 }
@@ -119,20 +107,18 @@ button:hover {
     font-size: 16px;
 }
 
-/* Bolinhas da centopeia do alfabeto */
+/* Bolinhas da centopeia */
 .bolinha {
-    /* Prende a bolinha na tela */
+    /* Presa na tela */
     position: fixed;
-    /* Tamanho da bolinha */
     width: 30px;
     height: 30px;
-    /* Transforma o quadrado em círculo */
+    /* Vira círculo */
     border-radius: 50%;
-    /* Centraliza a letra dentro da bolinha */
+    /* Letra no meio */
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Aparência da letra */
     color: white;
     font-size: 15px;
     font-weight: bold;

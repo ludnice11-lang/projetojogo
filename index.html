@@ -2,13 +2,13 @@
 <html lang="pt-BR">
 
 <head>
-    <!-- Permite usar acentos e emojis -->
+    <!-- Acentos e emojis -->
     <meta charset="UTF-8">
-    <!-- Ajusta a página para celulares e tablets -->
+    <!-- Ajusta p/ celular e tablet -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título que aparece na aba do navegador -->
+    <!-- Nome na aba -->
     <title>Jogo das Letras</title>
-    <!-- Liga a página ao arquivo de estilo -->
+    <!-- Liga o CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,35 +16,35 @@
     <main>
         <h1>Jogo das Letras</h1>
 
-        <!-- Mostra quantos pontos e erros a criança fez -->
+        <!-- Pontos e erros -->
         <p id="pontos">Pontos: 0 | Erros: 0</p>
 
-        <!-- Mostra quantos segundos faltam -->
+        <!-- Tempo -->
         <p id="tempo"></p>
 
-        <!-- Mostra o desenho do animal -->
+        <!-- Desenho do animal -->
         <div id="animal">🐒</div>
 
-        <!-- Mostra a pergunta -->
+        <!-- Pergunta -->
         <p id="pergunta">Com que letra começa o nome deste animal?</p>
 
-        <!-- Guarda os botões com as letras -->
+        <!-- Botões das letras -->
         <div id="opcoes"></div>
-        
-        <!-- Botão de pausar, escondido até o jogo começar -->
+
+        <!-- Pausar, escondido até começar -->
         <button id="botao-pausar" class="botao-recomecar" hidden>Pausar</button>
 
-        <!-- Vai mostrar se a criança acertou -->
+        <!-- Acertou ou errou -->
         <p id="mensagem"></p>
 
-        <!-- Caixinha para escrever o nome -->
+        <!-- Caixinha do nome -->
         <div id="caixa-nome"></div>
 
-        <!-- Lista dos melhores resultados -->
+        <!-- Ranking -->
         <div id="ranking"></div>
     </main>
 
-    <!-- Fica no final para o JavaScript rodar depois de a página existir -->
+    <!-- No final p/ o JS rodar dps da pág carregar -->
     <script src="script.js"></script>
 </body>
 

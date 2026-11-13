@@ -1,4 +1,4 @@
-# Jogo das Letras 🐛
+# Jogo das Letras
 
 ![Capa do Jogo das Letras: um macaquinho pendurado em um cipó na floresta, cercado de letras coloridas](imagens/image_22eef1cb.jpg)
 
